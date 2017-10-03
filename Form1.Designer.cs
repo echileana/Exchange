@@ -35,6 +35,8 @@
             this.lblEquals = new System.Windows.Forms.Label();
             this.btnConvert = new System.Windows.Forms.Button();
             this.upperGrBox = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
             this.lblDate = new System.Windows.Forms.Label();
             this.datePicker = new System.Windows.Forms.DateTimePicker();
@@ -43,17 +45,23 @@
             // 
             // boxFrom
             // 
+            this.boxFrom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.boxFrom.FormatString = "(\"abc\")";
             this.boxFrom.FormattingEnabled = true;
+            this.boxFrom.ItemHeight = 13;
             this.boxFrom.Location = new System.Drawing.Point(17, 35);
+            this.boxFrom.MaxDropDownItems = 10;
             this.boxFrom.Name = "boxFrom";
-            this.boxFrom.Size = new System.Drawing.Size(76, 21);
+            this.boxFrom.Size = new System.Drawing.Size(80, 21);
             this.boxFrom.TabIndex = 0;
             // 
             // txtFrom
             // 
+            this.txtFrom.AcceptsReturn = true;
+            this.txtFrom.BackColor = System.Drawing.SystemColors.Control;
             this.txtFrom.Location = new System.Drawing.Point(149, 35);
             this.txtFrom.Name = "txtFrom";
-            this.txtFrom.Size = new System.Drawing.Size(76, 20);
+            this.txtFrom.Size = new System.Drawing.Size(75, 20);
             this.txtFrom.TabIndex = 1;
             this.txtFrom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrom_KeyPress);
             // 
@@ -62,22 +70,23 @@
             this.txtTo.Location = new System.Drawing.Point(281, 35);
             this.txtTo.Name = "txtTo";
             this.txtTo.ReadOnly = true;
-            this.txtTo.Size = new System.Drawing.Size(76, 20);
+            this.txtTo.Size = new System.Drawing.Size(75, 20);
             this.txtTo.TabIndex = 3;
             // 
             // boxTo
             // 
+            this.boxTo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.boxTo.FormattingEnabled = true;
             this.boxTo.Location = new System.Drawing.Point(413, 35);
             this.boxTo.Name = "boxTo";
-            this.boxTo.Size = new System.Drawing.Size(76, 21);
+            this.boxTo.Size = new System.Drawing.Size(75, 21);
             this.boxTo.TabIndex = 2;
             // 
             // lblEquals
             // 
             this.lblEquals.AutoSize = true;
             this.lblEquals.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquals.Location = new System.Drawing.Point(240, 38);
+            this.lblEquals.Location = new System.Drawing.Point(244, 32);
             this.lblEquals.Name = "lblEquals";
             this.lblEquals.Size = new System.Drawing.Size(21, 24);
             this.lblEquals.TabIndex = 4;
@@ -85,15 +94,18 @@
             // 
             // btnConvert
             // 
-            this.btnConvert.Location = new System.Drawing.Point(413, 79);
+            this.btnConvert.Location = new System.Drawing.Point(215, 117);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(75, 23);
             this.btnConvert.TabIndex = 5;
             this.btnConvert.Text = "Convert";
             this.btnConvert.UseVisualStyleBackColor = true;
+            this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
             // 
             // upperGrBox
             // 
+            this.upperGrBox.Controls.Add(this.label2);
+            this.upperGrBox.Controls.Add(this.label1);
             this.upperGrBox.Controls.Add(this.btnConvert);
             this.upperGrBox.Controls.Add(this.lblEquals);
             this.upperGrBox.Controls.Add(this.txtTo);
@@ -103,9 +115,27 @@
             this.upperGrBox.Enabled = false;
             this.upperGrBox.Location = new System.Drawing.Point(12, 30);
             this.upperGrBox.Name = "upperGrBox";
-            this.upperGrBox.Size = new System.Drawing.Size(520, 126);
+            this.upperGrBox.Size = new System.Drawing.Size(520, 163);
             this.upperGrBox.TabIndex = 6;
             this.upperGrBox.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(437, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(22, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "TO";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "FROM";
             // 
             // btnLoad
             // 
@@ -136,8 +166,7 @@
             this.datePicker.Name = "datePicker";
             this.datePicker.Size = new System.Drawing.Size(101, 20);
             this.datePicker.TabIndex = 10;
-            this.datePicker.Value = new System.DateTime(2017, 10, 3, 0, 0, 0, 0);
-            this.datePicker.ValueChanged += new System.EventHandler(this.dateTime_ValueChanged);
+            this.datePicker.Value = new System.DateTime(2017, 10, 18, 0, 0, 0, 0);
             // 
             // Form1
             // 
@@ -168,7 +197,9 @@
         private System.Windows.Forms.GroupBox upperGrBox;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.DateTimePicker datePicker;
+        protected System.Windows.Forms.DateTimePicker datePicker;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

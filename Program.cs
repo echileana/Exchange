@@ -15,8 +15,7 @@ namespace Exchange
         [STAThread]
         static void Main()
         {
-           // public DateTime 
-            Application.EnableVisualStyles();
+           Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
